@@ -1,0 +1,39 @@
+{
+    "name": "Pizza Hut",
+    "city": "Stockholm",
+    "country": "UK",
+    "deliveryPrice": "1.5",
+    "estimatedDeliveryTime": "15",
+    "cuisines": ["American", "Spanish", "Pizza", "Salads", "Pasta", "Burgers", "Desserts", "Cafe"],
+    "menuItems": [
+        {
+            "name": "Burger",
+            "price": "5.5"
+        },
+        {
+            "name": "Pizza",
+            "price": "7.5"
+        },
+        {
+            "name": "Pasta",
+            "price": "6.5"
+        },
+        {
+            "name": "Salad",
+            "price": "4.5"
+        },
+        {
+            "name": "Dessert",
+            "price": "3.5"
+        },
+        {
+            "name": "Cafe",
+            "price": "2.5"
+        },
+        {
+            "name": "Beverage",
+            "price": "1.5"
+        }
+    ],
+    "img": "../assets/pizza.jpg"
+}

@@ -4,7 +4,7 @@ import user_data from "../../data/user-profile.json";
 const {name, address, city, country} = user_data;
 const userEmail: string = "test@eatin.com"
 
-test("should update user profile", async ({up, page}) => {   
+test("should update user profile", { tag: ["@mobile", "@desktop"] }, async ({up, page}) => {   
     await up.gotoUserProfilePage();
     await up.verifyPageHeader();
 
@@ -24,7 +24,7 @@ test("should update user profile", async ({up, page}) => {
     await expect(page.getByText('User profile updated!').first()).toBeVisible();
 });
 
-test("should validate user profile update form", async ({up}) => {
+test("should validate user profile update form", { tag: ["@mobile", "@desktop"] }, async ({up}) => {
     await up.gotoUserProfilePage();
     await up.verifyPageHeader();
 
@@ -40,7 +40,7 @@ test("should validate user profile update form", async ({up}) => {
     await up.verifyCountryValidationIsVisible();
 })
 
-test("should have email field disabled", async ({up}) => {
+test("should have email field disabled", { tag: ["@mobile", "@desktop"] }, async ({up}) => {
     await up.gotoUserProfilePage();
     await up.verifyPageHeader();
 

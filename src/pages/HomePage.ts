@@ -55,4 +55,8 @@ export class HomePage extends BasePage implements IHomePage {
         const advertSubHeaderText = await this.homePageAdvertSubHeader.innerText();
         expect(advertSubHeaderText).toContain('Download the MernEats App for faster ordering and personalised recommendations');
     }
+
+    async getSearchInputField(): Promise<string> {
+        return await this.searchInputBox.inputValue();
+    }
 }

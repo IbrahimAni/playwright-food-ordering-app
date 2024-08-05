@@ -6,7 +6,7 @@ import path from 'path';
  * https://github.com/motdotla/dotenv
  */
 import dotenv from 'dotenv';
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenv.config({ path: path.resolve(__dirname, 'env/.env') });
 
 export const AUTH_STORAGE_STATE = path.resolve(__dirname, 'playwright/.auth/auth-storage-state.json');
 
@@ -29,7 +29,7 @@ export default defineConfig({
   timeout: 1 * 60 * 1000,
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.BASEURL? process.env.BASEURL : 'http://localhost:5173',
+    baseURL: process.env.DEV_BASEURL,
     
     testIdAttribute: 'data-testid',   
 
@@ -45,7 +45,7 @@ export default defineConfig({
       testDir: "src/global",
     },
     {
-      name: 'chromium',
+      name: 'EatInDesktop',
       dependencies: ['setup'],
       use: { 
         ...devices['Desktop Chrome'],

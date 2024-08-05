@@ -1,11 +1,18 @@
 import {test} from "../../fixtures/base";
 
-test.use({ storageState: { cookies: [], origins: [] } });
 
-test("should search for a resturant", async ({hp}) => {
+test("should search for a resturant by city", { tag: ["@mobile", "@desktop"] }, async ({hp, sr}) => {
+    const city = "salford"
     await hp.gotoHomePage();
-    await hp.searchResturant("Mcdonalds");
+    await hp.searchResturant(city);
     await hp.clickSearchButton();
-
-    // Add more test to verify the search result page
+    await sr.verifyTotalRestaurantsFound(city);
 });
+
+test("should search for a resturant by anything else", { tag: ["@mobile", "@desktop"] }, async ({hp, sr}) => {
+    const anything = "12345"
+    await hp.gotoHomePage();
+    await hp.searchResturant(anything);
+    await hp.clickSearchButton();
+    await sr.verifyZeroRestaurantsFound();
+});   

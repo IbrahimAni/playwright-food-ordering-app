@@ -62,7 +62,7 @@ export class UserProfilePage extends BasePage implements IUserProfilePage {
     }
     async verifyPageHeader(): Promise<void> {
         await expect(this.pageHeader).toBeVisible();
-        // expect(this.pageHeader).toContainText('User Profile');
+        expect(this.pageHeader).toContainText('User Profile');
     }
     async verifyPageSubHeader(): Promise<void> {
         await expect(this.pageSubHeader).toContainText('View and change your profile information here');
